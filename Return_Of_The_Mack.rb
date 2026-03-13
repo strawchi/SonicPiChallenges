@@ -3,21 +3,18 @@
 use_bpm 98
 use_synth :prophet
 ending = "C:/Users/chiamaka_igwebuike/Downloads/rotm.wav"
-
+startJingle = [:e5,:e5,:d5,:d5,:d5,:e5,:e5]
+startSleep = [0.5,0.25,0.5,0.25,0.5,0.5,1.5]
+i = 0
 define :intro do |a|
-  play :e5, amp: a
-  sleep 0.5
-  play :e5, amp: a
-  sleep 0.25
-  play :d5, amp: a
-  sleep 0.5
-  play :d5, amp: a
-  sleep 0.25
-  play :d5, amp: a
-  sleep 0.5
-  play :e5, amp: a
-  sleep 0.5
-  play :e5, amp: a
+  7.times do
+    play (startJingle [i]), amp: a
+    sleep (startSleep [i])
+    i = i + 1
+    if i > 6
+      i = 0
+    end
+  end
 end
 
 live_loop:beat do
@@ -30,14 +27,12 @@ end
 
 sleep 4
 
+a = 0.25
 live_loop:melody do
-  intro 0.25
-  sleep 1.5
-  intro 0.5
-  sleep 1.5
-  intro 0.75
-  sleep 1.5
-  intro 1
+  4.times do
+    intro a
+    a = a + 0.25
+  end
   stop
 end
 

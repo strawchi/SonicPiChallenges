@@ -1,9 +1,11 @@
 # return of the mack
 
-use_bpm 94.25
+use_bpm 94
 use_synth :prophet
 lyrics = "C:/Users/chiamaka_igwebuike/Downloads/return_aud.wav"
 lied = "C:/Users/chiamaka_igwebuike/Downloads/rotm.wav"
+clap = "C:/Users/chiamaka_igwebuike/Downloads/clap.wav"
+
 startJingle = [:e,:e,:d,:d,:d,:e,:e]
 startSleep = [0.5,0.25,0.5,0.25,0.5,0.5,1.5]
 i = 0
@@ -77,8 +79,22 @@ end
 sleep 15.5
 
 live_loop :back do
-  play
+  10.times do
+    with_synth :bass_foundation do
+      play :e3, amp: 0.5
+      sleep 0.5
+      play :a3, amp: 0.5
+      sleep 0.75
+      play :e3, amp: 0.5
+      sleep 0.75
+      play :d3, release: 1.25, amp: 0.5
+      sleep 2
+    end
+  end
+  stop
 end
+
+
 
 
 sample lyrics, amp: 2
@@ -145,12 +161,24 @@ play :d, release: 2
 
 sleep 0.5
 liar
-
-#back music
-play :e3
-sleep 0.5
-play :a3
-sleep 0.75
-play :e3
-sleep 0.75
-play :d3, release: 1.25
+play :c
+sleep 0.25
+play :d
+sleep 0.25
+play :e
+sleep 0.25
+play :e
+sleep 1.25
+play :c
+sleep 0.25
+play :d
+sleep 0.25
+play :e
+sleep 0.25
+play :e
+sleep 0.25
+play :d
+sleep 0.25
+play :c
+sleep 0.25
+play :c

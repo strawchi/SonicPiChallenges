@@ -79,7 +79,7 @@ end
 sleep 15.5
 
 live_loop :back do
-  10.times do
+  8.times do
     with_synth :bass_foundation do
       play :e3, amp: 0.5
       sleep 0.5
@@ -161,24 +161,3 @@ play :d, release: 2
 
 sleep 0.5
 liar
-play :c
-sleep 0.25
-play :d
-sleep 0.25
-play :e
-sleep 0.25
-play :e
-sleep 1.25
-play :c
-sleep 0.25
-play :d
-sleep 0.25
-play :e
-sleep 0.25
-play :e
-sleep 0.25
-play :d
-sleep 0.25
-play :c
-sleep 0.25
-play :c
